@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 import { Contact } from '../../models/contact';
-// const axios = require('axios');
+const axios = require('axios');
 
 declare let $: any;
 
@@ -15,7 +15,7 @@ declare let $: any;
 export class ContactComponent implements OnInit {
 
   //Url da apikey
-  apiKey: string = "http://localhost:8100/cit-site-cs2018/us-central1/server/email";
+  apiKey: string = "yourapikey";
 
   form: FormGroup; // Váriavel que representa o nosso formulário
   email: Contact;
@@ -38,25 +38,25 @@ export class ContactComponent implements OnInit {
 
     this.loading = true;
 
-    // axios({ // Fazendo uma requisição para o servidor na porta da função /email
-    //   method: "POST",
-    //   url: this.apiKey,
-    //   data: {
-    //     email: this.email.email,
-    //     subject: this.email.subject,
-    //     name: this.email.name,
-    //     message: this.email.message,
-    //   }
-    // }).then((res) => {
-    //   console.log(res);
-    //   $('#successModal').modal('show');
-    //   this.onCancel();
-    //   $('#loadingModal').modal('toggle');
-    //   this.loading = false;
-    //   setTimeout(() => {
-    //     $('#successModal').modal('toggle');
-    //   }, 2000);
-    // });
+    axios({ // Fazendo uma requisição para o servidor na porta da função /email
+      method: "POST",
+      url: this.apiKey,
+      data: {
+        email: this.email.email,
+        subject: this.email.subject,
+        name: this.email.name,
+        message: this.email.message,
+      }
+    }).then((res) => {
+      console.log(res);
+      $('#successModal').modal('show');
+      this.onCancel();
+      $('#loadingModal').modal('toggle');
+      this.loading = false;
+      setTimeout(() => {
+        $('#successModal').modal('toggle');
+      }, 2000);
+    });
   }
 
   onCancel() {

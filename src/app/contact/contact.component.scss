@@ -72,7 +72,7 @@ i {
 }
 
 .modal-content {
-    background: #6E328C;
+    background: #303030;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -82,6 +82,7 @@ i {
     width: 150px;
     height: 150px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .text-center {
