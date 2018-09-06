@@ -1,0 +1,102 @@
+.height-100 {
+    height: 100vh;
+    background-image: url(../../assets/wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.card {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    top: 80px;
+    background: none;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.card-body {
+    border-radius: 10px;
+    background: #808080;
+    -webkit-box-shadow: 6px 7px 15px -4px rgba(0, 0, 0, 0.71);
+    -moz-box-shadow: 6px 7px 15px -4px rgba(0, 0, 0, 0.71);
+    box-shadow: 6px 7px 15px -4px rgba(0, 0, 0, 0.71)
+}
+
+.col-12 {
+    margin-bottom: 50px;
+}
+
+.form-control {
+    bottom: 100px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+input::placeholder {
+    font-style: oblique;
+    color: #919191;
+}
+
+.required {
+    top: 50px;
+    font-size: 8px;
+}
+
+.btn {
+    background: #303030;
+    color: #ffffff;
+    float: right;
+}
+
+.alert-danger {
+    font-size: 0.8em;
+    background: #000;
+    font-weight: 600;
+}
+
+i {
+    color: #ffffff;
+}
+
+.alert {
+    padding: .2rem 1.25rem;
+    margin-bottom: 0.2rem;
+    border: none;
+    border-radius: .25rem;
+}
+
+.modal-content {
+    background: #303030;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.modal-loading {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.text-center {
+    margin-top: 28px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.sended {
+    color: #32CD32;
+    font-size: 45px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 30px;
+}
