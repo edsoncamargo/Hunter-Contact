@@ -1,0 +1,76 @@
+<section class="height-100">
+  <div class="content">
+    <div class="container">
+      <div class="card">
+        <div class="card-body default-font">
+          <h5 class="card-title">&nbsp;&nbsp;Contate-nos - Hunter</h5>
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <div class="col-12">
+                <input class="form-control" type="text" id="name" formControlName="name" placeholder="Nome" autocomplete="off">
+                <div class="alert alert-danger" role="alert" *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched">
+                  <i>O campo nome é obrigátorio.</i>
+                </div>
+              </div>
+              <div class="col-12">
+                <input class="form-control" type="email" id="email" formControlName="email" aria-describedby="emailHelp " placeholder="E-mail"
+                  autocomplete="on">
+                <div class="alert alert-danger" role="alert" *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+                  <i>O campo e-mail é obrigátorio.</i>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="form.controls['email'].hasError('email') && form.controls['email'].touched">
+                  <i>Dígite um e-mail válido.</i>
+                </div>
+              </div>
+              <div class="col-12">
+                <input class="form-control" type="text" id="subject" formControlName="subject" placeholder="Assunto" autocomplete="off">
+                <div class="alert alert-danger" role="alert" *ngIf="form.controls['subject'].hasError('required') && form.controls['subject'].touched">
+                  <i>O campo assunto é obrigátorio.</i>
+                </div>
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" aria-label="With textarea" type="text" id="message" formControlName="message" placeholder="Mensagem"
+                  autocomplete="off"></textarea>
+                <div class="alert alert-danger" role="alert" *ngIf="form.controls['message'].hasError('required') && form.controls['message'].touched">
+                  <i>O campo mensagem é obrigátorio.</i>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div *ngIf="!loading">
+                <button class="btn" type="submit" data-toggle="modal" data-target="#loadingModal" id="buttonSubmit" [disabled]="!form.valid">Enviar</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Loading modal -->
+          <div class="modal fade modal-loading" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="loadingModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div *ngIf="loading">
+                    <app-loading></app-loading>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success modal -->
+          <div class="modal fade modal-success" id="successModal" tabindex="-1" role="dialog" aria-labelledby="succesModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p class="text-center">Enviado com sucesso!</p>
+                  <i class="fas fa-check sended"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
